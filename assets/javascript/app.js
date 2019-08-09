@@ -1,4 +1,4 @@
-class SimpleChat
+
   fireBase = new Firebase("https://simplechatapp.firebaseio.com/")
   
   constructor: ->
@@ -15,26 +15,24 @@ class SimpleChat
 
         @newMessage(name, text)
 
-  messagesView: (name, text) ->
-    listItem  = jQuery "<li/>"
+  // messagesView: (name, text) ->
+  //   listItem  = jQuery "<li/>"
 
-    nameItem  = jQuery "<p/>", {
-      class: "name"
-      text: name
-    }
+  //   nameItem  = jQuery "<p/>", {
+  //     class: "name"
+  //     text: name
+  //   }
 
-    textItem  = jQuery "<p/>", {
-      class: "text"
-      text: text
-    }
+  //   textItem  = jQuery "<p/>", {
+  //     class: "text"
+  //     text: text
+  //   }
 
-    listItem.appendTo  "#listMessages ul"
-    nameItem.appendTo  listItem
-    textItem.appendTo  listItem
+  //   listItem.appendTo  "#listMessages ul"
+  //   nameItem.appendTo  listItem
+  //   textItem.appendTo  listItem
 
-  newMessage: (name, text) ->
-    fireBase.push
-      name: name
-      text: text
-
-myChatApp = new SimpleChat
+  // newMessage: (name, text) ->
+  //   fireBase.push
+  //     name: name
+  //     text: text
