@@ -4,3 +4,7 @@
   width: 80%;
   max-height: 80%;
 }
+
+p {
+  text-align: right;
+}
