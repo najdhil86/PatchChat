@@ -1,8 +1,27 @@
 body {
   font: normal 400 16px Arial, Helvetica, sans-serif;
-  color: #333;
+  background-color: #2D3940;
+}
+.container {
+
+  margin: 60px auto;
+  background: #fff;
+  padding:0;
+  border-radius: 7px;
 }
 
+.profile-image{
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.settings-tray{
+  background-color: #8AA6BF;
+  padding: 10px 15px;
+  border-radius: 7px;
+
+}
 div.list-messages {
   width: 600px;
   margin: 20px auto 0;
@@ -46,6 +65,52 @@ div.list-messages {
     }
   }
 }
+
+i {
+  margin-top: 10px;
+  font-size: 25px;
+  color:#2D3940;
+}
+
+i:hover {
+  color: #0D0D0D;
+  cursor: pointer;
+}
+
+
+.friend-drawer {
+padding: 10px 15px;
+display: flex;
+vertical-align: baseline;
+background: #CEE1F2;
+transition: .3s ease;
+}
+
+.trip-text {
+  margin-left: 25%;
+  width: 70%;
+}  
+
+.h5-trip-text {
+    margin-top: 18px;
+    margin-bottom: 0;
+}
+  
+.friend-drawer:hover {
+  background: #0D0D0D;
+  cursor: pointer;
+  color:#fff;
+}
+
+.friend-drawer hr {
+  margin:1px auto;
+  width: 60%;
+}
+
+
+
+
+
 
 div.new-message {
   width: 600px;

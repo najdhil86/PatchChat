@@ -12,9 +12,45 @@
       crossorigin="anonymous"
     />
 
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
     <title>Document</title>
   </head>
   <body>
+
+    <div class="container">
+
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <div class="settings-tray">
+                    <span class="settings-tray--left float-left">
+                            <i class="material-icons">arrow_back_ios</i>
+                    </span>
+                    <img class = "profile-image" src="assets/man-1.svg" alt="">
+                </div>
+                <div class="friend-drawer">
+                    <img class = "profile-image" src="assets/man-2.svg" alt="">
+                    <div class="trip-text">
+                        <h5 class = "h5-trip-text">Trip 1</h5>
+                    </div>
+                </div>
+                <hr>
+                <div class="friend-drawer">
+                        <img class = "profile-image" src="assets/man-2.svg" alt="">
+                        <div class="trip-text">
+                            <h5 class = "h5-trip-text">Trip 2</h5>
+                        </div>
+                    </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+
     <div class="list-messages" id="listMessages">
       <ul></ul>
     </div>
@@ -23,6 +59,9 @@
       <input type="text" name="name" placeholder="name.." />
       <input type="text" name="text" placeholder="text.." />
     </div>
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
