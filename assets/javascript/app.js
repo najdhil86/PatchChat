@@ -7,7 +7,7 @@
 // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
 var placeSearch, autocomplete
-var mykey = config.MY_KEY
+
 var componentForm = {
   street_number: 'short_name',
   route: 'long_name',
@@ -34,6 +34,26 @@ function initAutocomplete() {
   autocomplete.addListener('place_changed', fillInAddress)
 }
 
+function fillInAddress() {
+  // Get the place details from the autocomplete object.
+  var place = autocomplete.getPlace()
+
+  // for (var component in componentForm) {
+  //   document.getElementById(component).value = ''
+  //   document.getElementById(component).disabled = false
+  // }
+
+  // Get each component of the address from the place details,
+  // and then fill-in the corresponding field on the form.
+  // for (var i = 0; i < place.address_components.length; i++) {
+  //   var addressType = place.address_components[i].types[0]
+  //   if (componentForm[addressType]) {
+  //     var val = place.address_components[i][componentForm[addressType]]
+  //     document.getElementById(addressType).value = val
+  //   }
+  // }
+}
+
 // Bias the autocomplete object to the user's geographical location,
 // as supplied by the browser's 'navigator.geolocation' object.
 function geolocate() {
@@ -54,20 +74,21 @@ function geolocate() {
 
 //placing data from address form section into chat
 $('button').on('click', function() {
+  alert('here you go')
   var addVal = $('#autocomplete').val()
-  if (addVal.len > 0) {
+  if (addVal.length > 0) {
     $('#Chatform').append($('<p>').text('Address: ' + addVal))
     $('#autocomplete').val('')
   }
 
   var bolVal = $('#billOfLading').val()
-  if (bolVal.len > 0) {
+  if (bolVal.length > 0) {
     $('#Chatform').append($('<p>').text('Bill of Lading: ' + bolVal))
     $('#billOfLading').val('')
   }
 
   var sealVal = $('#sealNumber').val()
-  if (sealVal.len > 0) {
+  if (sealVal.length > 0) {
     $('#Chatform').append($('<p>').text('Seal Number: ' + sealVal))
     $('#sealNumber').val('')
   }
