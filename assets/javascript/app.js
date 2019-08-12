@@ -7,7 +7,7 @@
 // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
 var placeSearch, autocomplete
-var mykey = config.MY_KEY
+
 var componentForm = {
   street_number: 'short_name',
   route: 'long_name',
@@ -71,24 +71,3 @@ function geolocate() {
 }
 
 //placing data from address form section into chat
-$('button').on('click', function() {
-  var addVal = $('#autocomplete').val()
-  if (addVal.len > 0) {
-    $('#Chatform').append($('<p>').text('Address: ' + addVal))
-    $('#autocomplete').val('')
-  }
-
-  var bolVal = $('#billOfLading').val()
-  if (bolVal.len > 0) {
-    $('#Chatform').append($('<p>').text('Bill of Lading: ' + bolVal))
-    $('#billOfLading').val('')
-  }
-
-  var sealVal = $('#sealNumber').val()
-  if (sealVal.len > 0) {
-    $('#Chatform').append($('<p>').text('Seal Number: ' + sealVal))
-    $('#sealNumber').val('')
-  }
-
-  event.preventDefault()
-})
