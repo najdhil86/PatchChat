@@ -107,9 +107,34 @@ transition: .3s ease;
   width: 60%;
 }
 
+h6 {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
 
+.main-trip-text{
+  margin-left: 3%;
+}
 
+.chat-bubble-left {
 
+  padding: 10px 14px;
+  background: #eee;
+  margin: 10px 30px;
+  border-radius: 9px;
+  position: relative;
+  animation: fadeIn 1s ease-in;
+}
+.chat-bubble-right{
+  
+  padding: 10px 14px;
+  background: #2D383F;
+  color: #fff;
+  margin: 10px 30px;
+  border-radius: 9px;
+  position: relative;
+  animation: fadeIn 1s ease-in;
+}
 
 
 div.new-message {
