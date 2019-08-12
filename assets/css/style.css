@@ -22,6 +22,8 @@ body {
   border-radius: 7px;
 
 }
+
+
 div.list-messages {
   width: 600px;
   margin: 20px auto 0;
@@ -78,13 +80,22 @@ i:hover {
 }
 
 
-.friend-drawer {
+.driver-drawer {
 padding: 10px 15px;
 display: flex;
 vertical-align: baseline;
 background: #CEE1F2;
 transition: .3s ease;
 }
+
+.friend-drawer {
+  padding: 10px 15px;
+  display: flex;
+  vertical-align: baseline;
+  background: #CEE1F2;
+  transition: .3s ease;
+}
+
 
 .trip-text {
   margin-left: 25%;
@@ -96,13 +107,13 @@ transition: .3s ease;
     margin-bottom: 0;
 }
   
-.friend-drawer:hover {
+.driver-drawer:hover {
   background: #0D0D0D;
   cursor: pointer;
   color:#fff;
 }
 
-.friend-drawer hr {
+.driver-drawer hr {
   margin:1px auto;
   width: 60%;
 }
@@ -136,8 +147,34 @@ h6 {
   animation: fadeIn 1s ease-in;
 }
 
+.chat-box-tray {
 
-div.new-message {
+  background: #eee;
+  display: flex;
+  align-items: baseline;
+  padding: 10px 15px;
+  align-items: center;
+  margin-top: 19px;
+  bottom: 0;
+  vertical-align: middle;
+}
+
+.chat-box-tray input {
+  margin: 0 10px;
+  padding: 6px 2px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.chat-box-tray i {
+
+  color: grey;
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+
+/* div.new-message {
   width: 600px;
   height: 80px;
   margin: 20px auto 0;
@@ -167,4 +204,4 @@ div.new-message {
       margin-left: 10px;
     }
   }
-}
+} */
