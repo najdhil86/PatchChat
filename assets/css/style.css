@@ -78,6 +78,15 @@ h6 {
   margin-left: 3%;
 }
 
+.chat-container {
+
+  height: 400px;
+  overflow: auto;
+  align-items: center;
+  justify-content: center;
+  scroll-behavior: auto;
+}
+
 .chat-bubble-left {
   padding: 10px 14px;
   background: #eee;
