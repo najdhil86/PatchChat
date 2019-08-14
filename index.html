@@ -16,10 +16,16 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Document</title>
   </head>
 
   <body>
+
     <div id="addressForm" class="row">
       <div class="col-4 border">
         <div class="container">
@@ -50,6 +56,76 @@
       <div id="Chatform" class="col-8 border">Chat over here</div>
     </div>
 
+
+
+    <div class="container">
+
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <div class="settings-tray">
+                    <span class="settings-tray--left float-left">
+                            <i class="material-icons">arrow_back_ios</i>
+                    </span>
+                    <img class = "profile-image" src="assets/images/man-1.svg" alt="">
+                </div>
+                <div class="driver-drawer">
+                    <img class = "profile-image" src="assets/images/map.svg" alt="">
+                    <div class="trip-text">
+                        <h5 class = "h5-trip-text">Trip 1</h5>
+                    </div>
+                </div>
+                
+                <div class="driver-drawer">
+                        <img class = "profile-image" src="assets/images/map.svg" alt="">
+                        <div class="trip-text">
+                            <h5 class = "h5-trip-text">Trip 2</h5>
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="settings-trey">
+                        <div class="friend-drawer">
+                                <img class = "profile-image" src="assets/images/man-2.svg" alt="">
+                                <div class="main-trip-text">
+                                    <h6>Driver 1</h6>
+                                </div>
+                        </div>
+                </div>
+                <div class="chat-panel">
+                    <div class="row no-gutters">
+                        <div class="col-md-3">
+                            <div class="chat-bubble-left">
+                                <!-- left bubbles -->
+                                Hello!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                            <div class="col-md-3 offset-md-9">
+                                <div class="chat-bubble-right">
+                                    <!-- right bubbles -->
+                                    Hello!
+                                </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-12">
+                                <div class="chat-box-tray">
+                                        <input type="text" placeholder="Type your message here...">
+                                        <i class="material-icons">send</i>
+                                </div>
+                
+                            </div>
+                        </div>
+                </div> 
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
     <!-- bootstrap -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -73,5 +149,9 @@
       defer
     ></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+
   </body>
 </html>
