@@ -71,3 +71,49 @@ function geolocate() {
 }
 
 //placing data from address form section into chat
+$('button').on('click', function() {
+  var addVal = $('#autocomplete').val()
+  // alert(addVal)
+  if (addVal.length > 0) {
+    $('#Chatform').append(
+      $('<p>')
+        .text('Address: ' + addVal)
+        .attr('class', 'chat-bubble-right')
+    )
+    $('#autocomplete').val('')
+  }
+
+  var bolVal = $('#billOfLading').val()
+  // alert(bolVal)
+  if (bolVal.length > 0) {
+    $('#Chatform').append(
+      $('<p>')
+        .text('Bill of Lading: ' + bolVal)
+        .attr('class', 'chat-bubble-right')
+    )
+    $('#billOfLading').val('')
+  }
+
+  var sealVal = $('#sealNumber').val()
+  // alert(sealVal.len)
+  if (sealVal.length > 0) {
+    $('#Chatform').append(
+      $('<p>')
+        .text('Seal Number: ' + sealVal)
+        .attr('class', 'chat-bubble-right')
+    )
+    $('#sealNumber').val('')
+  }
+
+  event.preventDefault()
+})
+
+$('#send').on('click', function() {
+  var msgVal = $('#chatMsg').val()
+  $('#Chatform').append(
+    $('<p>')
+      .text(msgVal)
+      .attr('class', 'chat-bubble-right')
+  )
+  $('#chatMsg').val('')
+})
