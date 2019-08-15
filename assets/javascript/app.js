@@ -117,3 +117,4 @@ $('#send').on('click', function() {
   )
   $('#chatMsg').val('')
 })
+
