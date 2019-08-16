@@ -144,40 +144,11 @@ var database = firebase.database()
 var appUserID = $('#sendUserID').text()
 function writeToDB(userID, commentVal) {
   database.ref('msg').push({
-    name: userID, //'leo',
-    comment: commentVal, //'hey',
+    name: userID,
+    comment: commentVal,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
   })
 }
-
-// $('button').on('click', function() {
-//   // Create a variable to reference the database.
-//   // alert()
-//   database.ref('msg').push({
-//     name: $('#sendUserID').text(), //'leo',
-//     comment: 'hey',
-//     dateAdded: firebase.database.ServerValue.TIMESTAMP
-//   })
-
-//   // database.ref('msg').push({
-//   //   name: 'rick',
-//   //   comment: 'yo',
-//   //   dateAdded: firebase.database.ServerValue.TIMESTAMP
-//   // })
-
-//   // database.ref('msg').push({
-//   //   name: 'leo',
-//   //   comment: 'i love popsicles',
-//   //   dateAdded: firebase.database.ServerValue.TIMESTAMP
-//   // })
-
-//   // database.ref('msg').push({
-//   //   name: 'rick',
-//   //   comment: 'bro go away',
-//   //   dateAdded: firebase.database.ServerValue.TIMESTAMP
-//   // })
-//   event.preventDefault()
-// })
 
 // Firebase watcher .on("child_added"
 database.ref('msg').on(
@@ -193,11 +164,6 @@ database.ref('msg').on(
           .text(sv.comment)
           .attr('class', 'chat-bubble-left')
       )
-      // $('#Chatform').append(
-      //   $('<p>')
-      //     .text(sv.name)
-      //     .attr('class', 'chat-bubble-left')
-      // )
     }
 
     // Handle the errors
