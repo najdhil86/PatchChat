@@ -187,17 +187,17 @@ database.ref('msg').on(
     var sv = snapshot.val()
     // debugger
     console.log(sv)
-    if (sv.name == 'Driver 1') {
+    if (sv.name == $('#sendUserID').text()) {
       $('#Chatform').append(
         $('<p>')
           .text(sv.comment)
           .attr('class', 'chat-bubble-left')
       )
-      $('#Chatform').append(
-        $('<p>')
-          .text(sv.name)
-          .attr('class', 'chat-bubble-left')
-      )
+      // $('#Chatform').append(
+      //   $('<p>')
+      //     .text(sv.name)
+      //     .attr('class', 'chat-bubble-left')
+      // )
     }
 
     // Handle the errors
