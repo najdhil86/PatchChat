@@ -36,21 +36,6 @@ function initAutocomplete() {
 function fillInAddress() {
   // Get the place details from the autocomplete object.
   var place = autocomplete.getPlace()
-
-  // for (var component in componentForm) {
-  //   document.getElementById(component).value = ''
-  //   document.getElementById(component).disabled = false
-  // }
-
-  // Get each component of the address from the place details,
-  // and then fill-in the corresponding field on the form.
-  // for (var i = 0; i < place.address_components.length; i++) {
-  //   var addressType = place.address_components[i].types[0]
-  //   if (componentForm[addressType]) {
-  //     var val = place.address_components[i][componentForm[addressType]]
-  //     document.getElementById(addressType).value = val
-  //   }
-  // }
 }
 // Bias the autocomplete object to the user's geographical location,
 // as supplied by the browser's 'navigator.geolocation' object.
@@ -116,4 +101,60 @@ $('#send').on('click', function() {
       .attr('class', 'chat-bubble-right')
   )
   $('#chatMsg').val('')
+})
+
+//firebase
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: 'AIzaSyBbmjc0FlMjD0oox0Bwxr2GjaCtVroEW2g',
+  authDomain: 'project-v-42a48.firebaseapp.com',
+  databaseURL: 'https://project-v-42a48.firebaseio.com',
+  projectId: 'project-v-42a48',
+  storageBucket: '',
+  messagingSenderId: '581821832445',
+  appId: '1:581821832445:web:6e09da7243c5a6ad'
+}
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig)
+
+// Create a variable to reference the database.
+var database = firebase.database()
+
+database.ref('msg').on(
+  'child_added',
+  function(snapshot, prevChildKey) {
+    // storing the snapshot.val() in a variable for convenience
+    var sv = snapshot.val()
+
+    console.log(sv)
+
+    // Handle the errors
+  },
+  function(errorObject) {
+    console.log('Errors handled: ' + errorObject.code)
+  }
+)
+
+database.ref('msg').push({
+  name: 'leo',
+  comment: 'hey',
+  dateAdded: firebase.database.ServerValue.TIMESTAMP
+})
+
+database.ref('msg').push({
+  name: 'rick',
+  comment: 'yo',
+  dateAdded: firebase.database.ServerValue.TIMESTAMP
+})
+
+database.ref('msg').push({
+  name: 'leo',
+  comment: 'i love popsicles',
+  dateAdded: firebase.database.ServerValue.TIMESTAMP
+})
+
+database.ref('msg').push({
+  name: 'rick',
+  comment: 'bro go away',
+  dateAdded: firebase.database.ServerValue.TIMESTAMP
 })
