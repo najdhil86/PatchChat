@@ -14,3 +14,6 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+database.ref().set({
+    
+})
