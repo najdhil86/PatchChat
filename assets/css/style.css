@@ -94,10 +94,12 @@ h6 {
 .chat-bubble-left {
   padding: 10px 14px;
   background: #eee;
+  color: rgb(63, 60, 60);
   margin: 10px 30px;
   border-radius: 9px;
   position: relative;
   animation: fadeIn 1s ease-in;
+  text-align: left;
 }
 .chat-bubble-right {
   padding: 10px 14px;
@@ -117,6 +119,7 @@ h6 {
   align-items: center;
   margin-top: 19px;
   bottom: 0;
+  overflow: auto;
   vertical-align: middle;
 }
 
