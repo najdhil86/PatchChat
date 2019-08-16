@@ -126,8 +126,9 @@ $('#send').on('click', function() {
   var msgVal = $('#chatMsg').val()
   console.log(msgVal)
 
-  database.ref("Dispatch").set({
-    Message: msgVal
+  database.ref("Dispatch").push({
+    Message: msgVal,
+    dateAdded: firebase.database.ServerValue.TIMESTAMP
 })
   $('#Chatform').append(
     $('<p>')
