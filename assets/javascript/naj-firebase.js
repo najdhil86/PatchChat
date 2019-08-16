@@ -14,8 +14,9 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-var chat-input = $('chatMsg').val();
+var chat_input = $('chatMsg').val();
+console.log(chat_input)
 
 database.ref("Dispatch").set({
-    Message: 
-})
+    Message: chat_input
+});
