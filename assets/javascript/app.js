@@ -187,7 +187,7 @@ database.ref('msg').on(
     var sv = snapshot.val()
     // debugger
     console.log(sv)
-    if (sv.name == $('#sendUserID').text()) {
+    if (sv.name == $('#receiveUserID').text()) {
       $('#Chatform').append(
         $('<p>')
           .text(sv.comment)
