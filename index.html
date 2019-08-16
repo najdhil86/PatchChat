@@ -1,96 +1,96 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Place Autocomplete Address Form</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+    />
+    <!-- bootstrap  -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <title>Place Autocomplete Address Form</title>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-  <meta charset="utf-8" />
-  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
-  <!-- bootstrap  -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-  <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <title>Document</title>
+  </head>
 
-  <title>Document</title>
-</head>
-
-<body>
-  <div id="addressForm" class="row">
-    <div class="col-4 border">
-      <div class="container">
-        <div class="settings-tray">
-          <span class="settings-tray--left float-left">
-            <i class="material-icons">arrow_back_ios</i>
-          </span>
-          <img class="profile-image" src="assets/images/man-1.svg" alt="" />
+  <body>
+    <div id="addressForm" class="row">
+      <div class="col-4 border">
+        <div class="container">
+          <div class="settings-tray">
+            <span class="settings-tray--left float-left">
+              <i class="material-icons">arrow_back_ios</i>
+            </span>
+            <img class="profile-image" src="assets/images/man-1.svg" alt="" />
+            <h4 id="sendUserID">Dispatcher</h4>
+          </div>
+          <div class="driver-drawer">
+            <img class="profile-image" src="assets/images/map.svg" alt="" />
+            <div class="trip-text">
+              <h5 class="h5-trip-text">Trip 1</h5>
+            </div>
+          </div>
+          <div class="driver-drawer">
+            <img class="profile-image" src="assets/images/map.svg" alt="" />
+            <div class="trip-text">
+              <h5 class="h5-trip-text">Trip 2</h5>
+            </div>
+          </div>
+          <form>
+            <div class="form-group" id="locationField">
+              <label for="autocomplete">Address</label>
+              <input
+                type="text"
+                class="form-control"
+                id="autocomplete"
+                onFocus="geolocate()"
+              />
+            </div>
+            <div class="form-group">
+              <label for="billOfLading">Bill Of Lading</label>
+              <input type="text" class="form-control" id="billOfLading" />
+            </div>
+            <div class="form-group">
+              <label for="sealNumber">Seal Number</label>
+              <input type="text" class="form-control" id="sealNumber" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
-        <div class="driver-drawer">
-          <img class="profile-image" src="assets/images/map.svg" alt="" />
-          <div class="trip-text">
-            <h5 class="h5-trip-text">Trip 1</h5>
+      </div>
+      <div id="Chatform" class="col-8 border">
+        <div class="friend-drawer">
+          <img class="profile-image" src="assets/images/man-2.svg" alt="" />
+          <div class="main-trip-text">
+            <h6 id="receiveUserID">Driver 1</h6>
           </div>
         </div>
-        <div class="driver-drawer">
-          <img class="profile-image" src="assets/images/map.svg" alt="" />
-          <div class="trip-text">
-            <h5 class="h5-trip-text">Trip 2</h5>
-          </div>
+      </div>
+      <div class="col-12 border">
+        <div class="chat-box-tray">
+          <input
+            type="text"
+            placeholder="Type your message here..."
+            id="chatMsg"
+          />
+          <i class="material-icons" id="send">send</i>
         </div>
-        <form>
-          <div class="form-group" id="locationField">
-            <label for="autocomplete">Address</label>
-            <input type="text" class="form-control" id="autocomplete" onFocus="geolocate()" />
-          </div>
-          <div class="form-group">
-            <label for="billOfLading">Bill Of Lading</label>
-            <input type="text" class="form-control" id="billOfLading" />
-          </div>
-          <div class="form-group">
-            <label for="sealNumber">Seal Number</label>
-            <input type="text" class="form-control" id="sealNumber" />
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
       </div>
     </div>
-    <div id="Chatform" class="col-8 border">
-      <div class="friend-drawer">
-        <img class="profile-image" src="assets/images/man-2.svg" alt="" />
-        <div class="main-trip-text">
-          <h6>Driver 1</h6>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 border">
-      <div class="chat-box-tray">
-        <input type="text" placeholder="Type your message here..." id="chatMsg" />
-        <i class="material-icons" id="send">send</i>
-      </div>
-    </div>
-  </div>
-
-  <!-- bootstrap -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <!-- google maps -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbmjc0FlMjD0oox0Bwxr2GjaCtVroEW2g&libraries=places&callback=initAutocomplete"
-    async defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
-  <script src="assets/javascript/app.js"></script>
-</body>
 
     <!-- firebase -->
 

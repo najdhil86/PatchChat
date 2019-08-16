@@ -1,141 +1,148 @@
-h1 {
-  font-size: 45px;
-  font-family: 'Allerta Stencil', sans-serif;
-  color: white;
-}
-
-h2 {
-  font-size: 20px;
-  text-align: center;
-  text-shadow: 2px 1px grey;
-  color: white;
-  font-family: 'Allerta Stencil', sans-serif;
-}
-
+/*
+#######################################################################################################
+#######################################################################################################
+#######################################################################################################
+New file here. 
+#######################################################################################################
+#######################################################################################################
+#######################################################################################################
+*/
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  float: center;
-  background-image: url('https://images.unsplash.com/photo-1541969487406-1f1adf3884ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  font: normal 400 16px Arial, Helvetica, sans-serif;
+  background-color: #2d3940;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-/* Full-width input fields */
-input[type='text'],
-input[type='password'],
-input [type='number'] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-/* Add a background color when the inputs get focus */
-input[type='text']:focus,
-input[type='password'],
-input[type='number']:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: rgb(49, 138, 79);
+/* .container {
+  margin: 60px auto;
+  background: #fff;
+  padding: 0;
+  border-radius: 7px;
+} */
+label,
+p,
+div {
   color: white;
-  font-size: 15px;
-  text-align: center;
+}
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
 }
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
+.settings-tray {
+  background-color: #8aa6bf;
+  padding: 10px 15px;
+  border-radius: 7px;
 }
 
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn,
-.signupbtn {
-  float: center;
-  width: 50%;
+i {
+  margin-top: 10px;
+  font-size: 25px;
+  color: #2d3940;
 }
 
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
-
-/* The Dispatcher/Driver (background) */
-.dispatcher,
-.driver {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: #474e5d;
-  padding-top: 50px;
-}
-
-/* Dispatcher/Driver Content/Box */
-.dispatcher-content,
-.driver-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto;
-  /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%;
-  /* Could be more or less, depending on screen size */
-}
-
-/* Style the horizontal ruler */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
-}
-
-.close:hover,
-.close:focus {
-  color: #f44336;
+i:hover {
+  color: #0d0d0d;
   cursor: pointer;
 }
 
-/* Clear floats */
-.clearfix::after {
-  content: '';
-  clear: both;
-  display: table;
+.driver-drawer {
+  padding: 10px 15px;
+  display: flex;
+  vertical-align: baseline;
+  background: #cee1f2;
+  transition: 0.3s ease;
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn,
-  .signupbtn {
-    width: 100%;
-  }
+.friend-drawer {
+  padding: 10px 15px;
+  display: flex;
+  vertical-align: baseline;
+  background: #cee1f2;
+  transition: 0.3s ease;
+}
+
+.trip-text {
+  margin-left: 25%;
+  width: 70%;
+}
+
+.h5-trip-text {
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.driver-drawer:hover {
+  background: #0d0d0d;
+  cursor: pointer;
+  color: #fff;
+}
+
+.driver-drawer hr {
+  margin: 1px auto;
+  width: 60%;
+}
+
+h6 {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.main-trip-text {
+  margin-left: 3%;
+}
+
+.chat-bubble-left {
+  padding: 10px 14px;
+  background: #eee;
+  color: rgb(63, 60, 60);
+  margin: 10px 30px;
+  border-radius: 9px;
+  position: relative;
+  animation: fadeIn 1s ease-in;
+  text-align: left;
+}
+.chat-bubble-right {
+  padding: 10px 14px;
+  background: #a1c6dd;
+  color: rgb(63, 60, 60);
+  margin: 10px 30px;
+  border-radius: 9px;
+  position: relative;
+  animation: fadeIn 1s ease-in;
+}
+
+.chat-box-tray {
+  background: #eee;
+  display: flex;
+  align-items: baseline;
+  padding: 10px 15px;
+  align-items: center;
+  margin-top: 19px;
+  bottom: 0;
+  overflow: auto;
+  vertical-align: middle;
+}
+
+.chat-box-tray input {
+  margin: 0 10px;
+  padding: 6px 2px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.chat-box-tray i {
+  color: grey;
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+#addressForm {
+  margin: 20px;
+  padding: 20px;
+  width: 80%;
+  max-height: 80%;
+}
+
+p {
+  text-align: right;
 }
