@@ -24,64 +24,126 @@
       rel="stylesheet"
     />
 
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
     <title>Patch Chat</title>
   </head>
 
   <body>
-    <div id="addressForm" class="row">
-      <div class="col-4 border" id="side-panel">
+
+    <!-- Start of Navigation  for now just the truck-->
+<div class="layout">
+  <nav class="navigation">
+    <div class="container">
+        <ul class="nav" role="tablist">
+            <li><i class="fa fa-truck fa-10x" id="logo" style="font-size: 35px;"></i></a></li>
+          </ul>
+    </div>
+  </nav>
+  <!-- End of Navigation -->
+
+  <!-- Start of Side bar with form and Dispatcher logo -->
+  <div class="sidebar">
+      <!-- <div class="col-4 border" id="side-panel"> -->
+          <div class="container">
+            <div class="tab-content">
+              <div class="top">
+                  <!-- <div class="dispatcher-tray"> -->
+                      <img class="avatars" src="assets/images/man-1.svg" alt="" />
+                      <span class="settings-tray float-right">
+                          <h6>Dispatcher</h6>
+                      </span>
+                    <!-- </div> -->
+              </div>
+              <div class="middle">
+                  <form>
+                      <div class="form-group" id="locationField">
+                        <label for="autocomplete">Address</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="autocomplete"
+                          onFocus="geolocate()"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="billOfLading">Bill Of Lading</label>
+                        <input type="text" class="form-control" id="billOfLading" />
+                      </div>
+                      <div class="form-group">
+                        <label for="sealNumber">Seal Number</label>
+                        <input type="text" class="form-control" id="sealNumber" />
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+              </div>
+                    
+              </div>
+            </div>
+  </div>
+
+  <!-- End of Side bar with form and Dispatcher logo -->
+      
+<!-- Start of Chat -->
+
+<div class="chat" id="Chatform">
+  <div class="tab-content">
+    <div class="item">
+
+      <div class="content">
         <div class="container">
-          <div class="settings-tray">
-            
-            <img class="profile-image" src="assets/images/man-1.svg" alt="" />
-<<<<<<< HEAD
-            <h4 id="sendUserID">Dispatcher</h4>
-=======
-            <span class="settings-tray float-right">
-                <h6>Dispatcher</h6>
-            </span>
->>>>>>> 6aa0bd6c72bbed2399d88861b6f280f641e69378
-          </div>
-          <div class="driver-drawer">
-            <img class="profile-image" src="assets/images/map.svg" alt="" />
-            <div class="trip-text">
-                <button class="btn btn-primary" type="submit" id="h5-trip-text">Trip 1</button>
+          <div class="top">
+            <div class="headline">
+                <img class="avatars" src="assets/images/man-2.svg" alt="" />
+                <div class="content">
+                    <h5 id="receiveUserID">Driver 1</h5>
+                </div>
             </div>
           </div>
-          <div class="driver-drawer">
-            <img class="profile-image" src="assets/images/map.svg" alt="" />
-            <div class="trip-text">
-              <button class="btn btn-primary" type="submit" id="h5-trip-text">Trip 2</button>
-            </div>
-          </div>
-          <form>
-            <div class="form-group" id="locationField">
-              <label for="autocomplete">Address</label>
-              <input
-                type="text"
-                class="form-control"
-                id="autocomplete"
-                onFocus="geolocate()"
-              />
-            </div>
-            <div class="form-group">
-              <label for="billOfLading">Bill Of Lading</label>
-              <input type="text" class="form-control" id="billOfLading" />
-            </div>
-            <div class="form-group">
-              <label for="sealNumber">Seal Number</label>
-              <input type="text" class="form-control" id="sealNumber" />
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
         </div>
 
+        <!-- Start of Middle the messages part -->
+        <div class="middle" id="scroll">
+          <div class="container">
+
+            <!-- Message structure -->
+            <ul>
+              <li>
+                <div class="content">
+                  <div class="message">
+                    <div class="bubble">
+
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!-- End of message structure -->
+
+          </div>
+        </div>
+        <!-- End of the Middle portion of messages -->
+        <div class="container">
+          <div class="bottom">
+              <form>
+                  <textarea class="form-control" placeholder="Type message..." rows="1" id="chatMsg"></textarea>
+                  <button type="submit" class="btn prepend" id="send"><i class="fa fa-paper-plane"></i></i></button>
+                </form>
+          </div>
+        </div>
 
       </div>
+    </div>
 
-      <div id="Chatform" class="col-8 border">
+  </div>
+</div>
+<!-- End of Chat -->
+
+      <!-- <div id="Chatform" class="col-8 border">
         <div class="friend-drawer">
-          <img class="profile-image" src="assets/images/man-2.svg" alt="" />
+          <img class="avatars" src="assets/images/man-2.svg" alt="" />
           <div class="main-trip-text">
             <h6 id="receiveUserID">Driver 1</h6>
           </div>
@@ -97,7 +159,8 @@
           <i class="material-icons" id="send">send</i>
         </div>
       </div>
-    </div>
+</div> -->
+    
 
     <!-- firebase -->
 
