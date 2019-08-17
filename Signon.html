@@ -11,14 +11,14 @@
     <h1>PatchChat</h1>
     <h2>Please Choose one:</h2>
     <div class="buttondiv">
-        <button onclick="document.getElementById(&#39;id01&#39;).style.display=&#39;block&#39;" style="width:auto;" class="udispatcher">Dispatcher</button>
-        <button onclick="document.getElementById(&#39;id02&#39;).style.display=&#39;block&#39;" style="width:auto;" class="udriver">Driver</button>
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="udispatcher">Dispatcher</button>
+        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="udriver">Driver</button>
 
 
     </div>
     <div id="id01" class="dispatcher" style="display: none;">
-        <span onclick="document.getElementById(&#39;id01&#39;).style.display=&#39;none&#39;" class="close" title="Close Dispatcher">x</span>
-        <form class="dispatcher-content" action="file:///action_page.php">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Dispatcher">x</span>
+        <form class="dispatcher-content" action="User.html">
             <div class="container">
                 <h1>Dispatcher</h1>
                 <p>Please fill in this form to create an account.</p>
@@ -40,34 +40,31 @@
                 </label>
                 </div>
             <div class="clearfix">
-                <button type="button" onclick="document.getElementById(&#39;id01&#39;).style.display=&#39;none&#39;" class="cancelbtn">Cancel</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                 <button type="submit" class="signupbtn">Sign Up</button>
             </div>
             </form>
     </div>
 
     <div id="id02" class="driver" style="display: none;">
-    <span onclick="document.getElementById(&#39;id02&#39;).style.display=&#39;none&#39;" class="close" title="Close Driver">x</span>
-    <form class="driver-content" action="file:///action_page.php">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Driver">x</span>
+    <form class="driver-content" action="User.html">
         <div class="container">
             <h1>Driver</h1>
             <p>Please fill in this form to create an account.</p>
             <hr>
             <label for="email"><b>Name</b></label>
-            <input class="nkey" type="text" placeholder="Enter Name" name="name" required="">
+            <input id="dName" class="nkey" type="text" placeholder="Enter Name" name="name" required="">
 
             <label for="psw"><b>Password</b></label>
-            <input class="pkey" type="password" placeholder="Enter Password" name="psw" required="">
+            <input id="dPwd"class="pkey" type="password" placeholder="Enter Password" name="psw" required="">
 
-            <label for="num"><b>Phone Number</b></label>
-            <input class="pnkey" type="number" placeholder="Enter Phone Number" name="num" required="">
-
-            <label>
+            <!-- <label>
                 <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                </label>
+            </label> -->
              
         <div class="clearfix">
-            <button type="button" onclick="document.getElementById(&#39;id02&#39;).style.display=&#39;none&#39;" class="cancelbtn">Cancel</button>
+            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
             <button type="submit" class="signupbtn">Sign Up</button>
         </div>
     </form>
@@ -80,7 +77,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
-<script src="assets/javascript/signon.js"></script>    
+<script src="assets/javascript/signon.js"></script>   
+<script src="assets/javascript/app.js"></script> 
     
 </body>
 </html>

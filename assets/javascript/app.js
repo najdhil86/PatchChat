@@ -5,7 +5,8 @@
 // parameter when you first load the API. For example:
 // <script
 // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-var appUserID
+
+var appUserID, allAppUsers
 var placeSearch, autocomplete
 var componentForm = {
   street_number: 'short_name',
@@ -64,11 +65,16 @@ function geolocate() {
   }
 }
 //placing data from address form section into chat
-$('button').on('click', function() {
+$('#sendFormInfo').on('click', function() {
   var addVal = 'Address: ' + $('#autocomplete').val()
   // alert(addVal)
+<<<<<<< HEAD
   if (addVal.length > 0) {
     $('.message').append(
+=======
+  if ($('#autocomplete').val().length > 0) {
+    $('#Chatform').append(
+>>>>>>> end_2_end_flow
       $('<p>')
         .text(addVal)
         .attr('class', 'chat-bubble-right')
@@ -79,8 +85,13 @@ $('button').on('click', function() {
   }
   var bolVal = 'Bill of Lading: ' + $('#billOfLading').val()
   // alert(bolVal)
+<<<<<<< HEAD
   if (bolVal.length > 0) {
     $('.message').append(
+=======
+  if ($('#billOfLading').val().length > 0) {
+    $('#Chatform').append(
+>>>>>>> end_2_end_flow
       $('<p>')
         .text(bolVal)
         .attr('class', 'chat-bubble-right')
@@ -91,8 +102,13 @@ $('button').on('click', function() {
   }
   var sealVal = 'Seal Number: ' + $('#sealNumber').val()
   // alert(sealVal.len)
+<<<<<<< HEAD
   if (sealVal.length > 0) {
     $('.message').append(
+=======
+  if ($('#sealNumber').val().length > 0) {
+    $('#Chatform').append(
+>>>>>>> end_2_end_flow
       $('<p>')
         .text(sealVal)
         .attr('class', 'chat-bubble-right')
@@ -128,6 +144,7 @@ var config = {
 firebase.initializeApp(config)
 // Create a variable to reference the database.
 var database = firebase.database()
+
 var appUserID = $('#sendUserID').text()
 function writeToDB(userID, commentVal) {
   database.ref('msg').push({
@@ -157,6 +174,7 @@ database.ref('msg').on(
     console.log('Errors handled: ' + errorObject.code)
   }
 )
+<<<<<<< HEAD
 var appUserRole
 var appUserName
 var appUserPass
@@ -169,6 +187,30 @@ $('.udispatcher').on('click', function() {
 $('.signupbtn').on('click', function() {
   appUserName = $('.nkey').val()
   appUserPass = $('.pkey').val()
+=======
+
+var appUserRole
+var appUserName
+var appUserPass
+
+$('.udriver').on('click', function() {
+  appUserRole = $('.udriver').text()
+})
+
+$('.udispatcher').on('click', function() {
+  appUserRole = $('.udispatcher').text()
+})
+
+$('.signupbtn').on('click', function() {
+  if (appUserRole == 'Dispatcher') {
+    appUserName = $('.nkey').val()
+    appUserPass = $('.pkey').val()
+  } else {
+    appUserName = $('#dName').val()
+    appUserPass = $('#dPwd').val()
+  }
+  alert(appUserName)
+>>>>>>> end_2_end_flow
   alert(appUserPass)
   database.ref('users').push({
     name: appUserName,
@@ -176,6 +218,7 @@ $('.signupbtn').on('click', function() {
     userrole: appUserRole,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
   })
+<<<<<<< HEAD
 })
 // // Get the dispatcher screen
 // var dispatcher = document.getElementById('id01')
@@ -192,3 +235,130 @@ $('.signupbtn').on('click', function() {
 //     driver.style.display = 'none'
 //   }
 // }
+=======
+  // event.preventDefault()
+})
+
+allAppUsers = []
+// Firebase watcher .on("child_added"
+database.ref('users').on(
+  'value',
+  function(snapshot, prevChildKey) {
+    // storing the snapshot.val() in a variable for convenience
+    var sVal = snapshot.val()
+    $('#dispatcherList').empty()
+    $('#driverList').empty()
+    for (var elm in sVal) {
+      var el = elm
+      var myVal = sVal[el].name
+      allAppUsers.push(myVal)
+      var aTag = $('<a>').text(myVal)
+      var aTagWithClass = aTag.addClass('list-group-item')
+      var aTagClassStyle = aTagWithClass.attr('style', 'text-align: center')
+      var aTagClassStyleHref = aTagClassStyle.attr('href', 'index.html')
+      var a = aTagClassStyleHref.attr('data-user', myVal)
+      // debugger
+      if (sVal[el].userrole == 'Dispatcher') {
+        $('#dispatcherList').append(aTagClassStyleHref)
+      } else {
+        $('#driverList').append(aTagClassStyleHref)
+      }
+    }
+
+    // Handle the errors
+  },
+  function(errorObject) {
+    console.log('Errors handled: ' + errorObject.code)
+  }
+)
+//////*****
+//////*****
+//////*****
+//////*****
+allAppUsers = []
+// Firebase watcher .on("child_added"
+database.ref('users').on(
+  'value',
+  function(snapshot, prevChildKey) {
+    // storing the snapshot.val() in a variable for convenience
+    var sVal = snapshot.val()
+    $('#dispatcherList').empty()
+    $('#driverList').empty()
+    for (var elm in sVal) {
+      var el = elm
+      var myVal = sVal[el].name
+      allAppUsers.push(myVal)
+      var optionTag = $('<option>').text(myVal)
+      var oTag = optionTag.attr('value', myVal)
+      // debugger
+      // if (sVal[el].userrole == 'Dispatcher') {
+      // $('#dropDownDispatcher').append(oTag)
+      // } else {
+      $('#dropDownDriver').append(oTag)
+      // }
+    }
+
+    for (var elm in sVal) {
+      var el = elm
+      var myVal = sVal[el].name
+      allAppUsers.push(myVal)
+      var optionTag = $('<option>').text(myVal)
+      var oTag = optionTag.attr('value', myVal)
+      // debugger
+      // if (sVal[el].userrole == 'Dispatcher') {
+      $('#dropDownDispatcher').append(oTag)
+      // } else {
+      // $('#dropDownDriver').append(oTag)
+      // }
+    }
+
+    // Handle the errors
+  },
+  function(errorObject) {
+    console.log('Errors handled: ' + errorObject.code)
+  }
+)
+
+// $('select[="dropDownDriver"]').change(function(){
+
+//   if ($(this).val() == "2"){
+//       alert("call the do something function on option 2");
+//    }
+// });​
+$('#dropDownDriver').change(function() {
+  $('#receiveUserID').empty()
+  var ddVal = $(this).val()
+  $('#receiveUserID').text(ddVal)
+})
+
+$('#dropDownDispatcher').change(function() {
+  $('#sendUserID').empty()
+  var ddDispVal = $(this).val()
+  $('#sendUserID').text(ddDispVal)
+})
+// function getActiverUser() {
+//   var retVal = ''
+//   database.ref('activeUsr').on(
+//     'value',
+//     function(snapshot) {
+//       // storing the snapshot.val() in a variable for convenience
+//       var snpVal = snapshot.val()
+//       retVal = snpVal.name
+//       $('#receiveUserID').text(retVal)
+//       // debugger
+
+//       // alert()
+
+//       // Handle the errors
+//     },
+//     function(errorObject) {
+//       console.log('Errors handled: ' + errorObject.code)
+//     }
+//   )
+//   return retVal
+// }
+// getActiverUser()
+
+// $('#receiveUserID').text(curUser)
+// debugger
+>>>>>>> end_2_end_flow
