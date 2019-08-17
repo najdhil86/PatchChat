@@ -8,6 +8,7 @@
 
 var appUserID, allAppUsers
 var placeSearch, autocomplete
+
 var componentForm = {
   street_number: 'short_name',
   route: 'long_name',
@@ -16,6 +17,7 @@ var componentForm = {
   country: 'long_name',
   postal_code: 'short_name'
 }
+
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search predictions to
   // geographical location types.
@@ -23,9 +25,11 @@ function initAutocomplete() {
     document.getElementById('autocomplete'),
     { types: ['geocode'] }
   )
+
   // Avoid paying for data that you don't need by restricting the set of
   // place fields that are returned to just the address components.
   autocomplete.setFields(['address_component'])
+
   // When the user selects an address from the drop-down, populate the
   // address fields in the form.
   autocomplete.addListener('place_changed', fillInAddress)
@@ -33,10 +37,12 @@ function initAutocomplete() {
 function fillInAddress() {
   // Get the place details from the autocomplete object.
   var place = autocomplete.getPlace()
+
   // for (var component in componentForm) {
   //   document.getElementById(component).value = ''
   //   document.getElementById(component).disabled = false
   // }
+
   // Get each component of the address from the place details,
   // and then fill-in the corresponding field on the form.
   // for (var i = 0; i < place.address_components.length; i++) {
@@ -64,6 +70,7 @@ function geolocate() {
     })
   }
 }
+
 //placing data from address form section into chat
 $('#sendFormInfo').on('click', function() {
   var addVal = 'Address: ' + $('#autocomplete').val()
@@ -78,6 +85,7 @@ $('#sendFormInfo').on('click', function() {
     appUserID = $('#sendUserID').text()
     writeToDB(appUserID, addVal)
   }
+
   var bolVal = 'Bill of Lading: ' + $('#billOfLading').val()
   // alert(bolVal)
   if ($('#billOfLading').val().length > 0) {
@@ -90,6 +98,7 @@ $('#sendFormInfo').on('click', function() {
     appUserID = $('#sendUserID').text()
     writeToDB(appUserID, bolVal)
   }
+
   var sealVal = 'Seal Number: ' + $('#sealNumber').val()
   // alert(sealVal.len)
   if ($('#sealNumber').val().length > 0) {
@@ -102,11 +111,13 @@ $('#sendFormInfo').on('click', function() {
     appUserID = $('#sendUserID').text()
     writeToDB(appUserID, sealVal)
   }
+
   event.preventDefault()
 })
+
 $('#send').on('click', function() {
   var msgVal = $('#chatMsg').val()
-  $('.message').append(
+  $('#Chatform').append(
     $('<p>')
       .text(msgVal)
       .attr('class', 'chat-bubble-right')
@@ -115,6 +126,7 @@ $('#send').on('click', function() {
   appUserID = $('#sendUserID').text()
   writeToDB(appUserID, msgVal)
 })
+
 // Your web app's Firebase configuration
 var config = {
   apiKey: 'AIzaSyBbmjc0FlMjD0oox0Bwxr2GjaCtVroEW2g',
@@ -127,6 +139,7 @@ var config = {
 }
 // Initialize Firebase
 firebase.initializeApp(config)
+
 // Create a variable to reference the database.
 var database = firebase.database()
 
@@ -138,6 +151,7 @@ function writeToDB(userID, commentVal) {
     dateAdded: firebase.database.ServerValue.TIMESTAMP
   })
 }
+
 // Firebase watcher .on("child_added"
 database.ref('msg').on(
   'child_added',
@@ -147,12 +161,13 @@ database.ref('msg').on(
     // debugger
     console.log(sv)
     if (sv.name == $('#receiveUserID').text()) {
-      $('.message').append(
+      $('#Chatform').append(
         $('<p>')
           .text(sv.comment)
           .attr('class', 'chat-bubble-left')
       )
     }
+
     // Handle the errors
   },
   function(errorObject) {
