@@ -6,7 +6,6 @@
 // <script
 // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-
 var appUserID, allAppUsers
 var placeSearch, autocomplete
 
@@ -239,7 +238,57 @@ database.ref('users').on(
     console.log('Errors handled: ' + errorObject.code)
   }
 )
+//////*****
+//////*****
+//////*****
+//////*****
+allAppUsers = []
+// Firebase watcher .on("child_added"
+database.ref('users').on(
+  'value',
+  function(snapshot, prevChildKey) {
+    // storing the snapshot.val() in a variable for convenience
+    var sVal = snapshot.val()
+    $('#dispatcherList').empty()
+    $('#driverList').empty()
+    for (var elm in sVal) {
+      var el = elm
+      var myVal = sVal[el].name
+      allAppUsers.push(myVal)
+      var optionTag = $('<option>').text(myVal)
+      var oTag = optionTag.attr('value', myVal)
+      // debugger
+      if (sVal[el].userrole == 'Dispatcher') {
+        $('#dropDownDispatcher').append(oTag)
+      } else {
+        $('#dropDownDriver').append(oTag)
+      }
+    }
 
+    // Handle the errors
+  },
+  function(errorObject) {
+    console.log('Errors handled: ' + errorObject.code)
+  }
+)
+
+// $('select[="dropDownDriver"]').change(function(){
+
+//   if ($(this).val() == "2"){
+//       alert("call the do something function on option 2");
+//    }
+// });​
+$('#dropDownDriver').change(function() {
+  $('#receiveUserID').empty()
+  var ddVal = $(this).val()
+  $('#receiveUserID').text(ddVal)
+})
+
+$('#dropDownDispatcher').change(function() {
+  $('#sendUserID').empty()
+  var ddDispVal = $(this).val()
+  $('#sendUserID').text(ddDispVal)
+})
 // function getActiverUser() {
 //   var retVal = ''
 //   database.ref('activeUsr').on(
