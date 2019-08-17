@@ -128,6 +128,15 @@ $('#send').on('click', function() {
   event.preventDefault()
 })
 
+// $('#my_form').keydown(function() {
+//   var key = e.which
+//   if (key == 13) {
+//     // As ASCII code for ENTER key is "13"
+//     $('#my_form').submit() // Submit form code
+//   }
+//   event.preventDefault()
+// })
+
 // Your web app's Firebase configuration
 var config = {
   apiKey: 'AIzaSyBbmjc0FlMjD0oox0Bwxr2GjaCtVroEW2g',
@@ -196,8 +205,8 @@ $('.signupbtn').on('click', function() {
     appUserName = $('#dName').val()
     appUserPass = $('#dPwd').val()
   }
-  alert(appUserName)
-  alert(appUserPass)
+  // alert(appUserName)
+  // alert(appUserPass)
   database.ref('users').push({
     name: appUserName,
     password: appUserPass,
@@ -304,6 +313,7 @@ $('#dropDownDispatcher').change(function() {
   var ddDispVal = $(this).val()
   $('#sendUserID').text(ddDispVal)
 })
+
 // function getActiverUser() {
 //   var retVal = ''
 //   database.ref('activeUsr').on(

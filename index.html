@@ -103,6 +103,7 @@
                 <div class="content">
                     <h5 id="receiveUserID">Select User</h5>
                     <select id="dropDownDriver"> </select>
+                    <p>Weather: <span id="ourWeather">0</span></p>
                 </div>
             </div>
           </div>
@@ -131,8 +132,8 @@
         <!-- End of the Middle portion of messages -->
         <div class="container">
           <div class="bottom">
-              <form>
-                  <textarea class="form-control" placeholder="Type message..." rows="1" id="chatMsg"></textarea>
+              <form id="my_form">
+                  <textarea class="form-control" placeholder="Type message..." rows="1" id="chatMsg" ></textarea>
                   <button type="submit" class="btn prepend" id="send"><i class="fa fa-paper-plane"></i></i></button>
                 </form>
           </div>
@@ -149,11 +150,12 @@
     <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
     <!-- bootstrap -->
-    <script
+    <!-- <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -170,6 +172,9 @@
       async
       defer
     ></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <script src="assets/javascript/jquery.js"></script> -->
     <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/weather.js"></script>
   </body>
 </html>
