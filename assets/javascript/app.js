@@ -5,7 +5,9 @@
 // parameter when you first load the API. For example:
 // <script
 // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-var appUserID
+
+
+var appUserID, allAppUsers
 var placeSearch, autocomplete
 
 var componentForm = {
@@ -71,10 +73,10 @@ function geolocate() {
 }
 
 //placing data from address form section into chat
-$('button').on('click', function() {
+$('#sendFormInfo').on('click', function() {
   var addVal = 'Address: ' + $('#autocomplete').val()
   // alert(addVal)
-  if (addVal.length > 0) {
+  if ($('#autocomplete').val().length > 0) {
     $('#Chatform').append(
       $('<p>')
         .text(addVal)
@@ -87,7 +89,7 @@ $('button').on('click', function() {
 
   var bolVal = 'Bill of Lading: ' + $('#billOfLading').val()
   // alert(bolVal)
-  if (bolVal.length > 0) {
+  if ($('#billOfLading').val().length > 0) {
     $('#Chatform').append(
       $('<p>')
         .text(bolVal)
@@ -100,7 +102,7 @@ $('button').on('click', function() {
 
   var sealVal = 'Seal Number: ' + $('#sealNumber').val()
   // alert(sealVal.len)
-  if (sealVal.length > 0) {
+  if ($('#sealNumber').val().length > 0) {
     $('#Chatform').append(
       $('<p>')
         .text(sealVal)
@@ -141,6 +143,7 @@ firebase.initializeApp(config)
 
 // Create a variable to reference the database.
 var database = firebase.database()
+
 var appUserID = $('#sendUserID').text()
 function writeToDB(userID, commentVal) {
   database.ref('msg').push({
@@ -172,3 +175,93 @@ database.ref('msg').on(
     console.log('Errors handled: ' + errorObject.code)
   }
 )
+
+var appUserRole
+var appUserName
+var appUserPass
+
+$('.udriver').on('click', function() {
+  appUserRole = $('.udriver').text()
+})
+
+$('.udispatcher').on('click', function() {
+  appUserRole = $('.udispatcher').text()
+})
+
+$('.signupbtn').on('click', function() {
+  if (appUserRole == 'Dispatcher') {
+    appUserName = $('.nkey').val()
+    appUserPass = $('.pkey').val()
+  } else {
+    appUserName = $('#dName').val()
+    appUserPass = $('#dPwd').val()
+  }
+  alert(appUserName)
+  alert(appUserPass)
+  database.ref('users').push({
+    name: appUserName,
+    password: appUserPass,
+    userrole: appUserRole,
+    dateAdded: firebase.database.ServerValue.TIMESTAMP
+  })
+  // event.preventDefault()
+})
+
+allAppUsers = []
+// Firebase watcher .on("child_added"
+database.ref('users').on(
+  'value',
+  function(snapshot, prevChildKey) {
+    // storing the snapshot.val() in a variable for convenience
+    var sVal = snapshot.val()
+    $('#dispatcherList').empty()
+    $('#driverList').empty()
+    for (var elm in sVal) {
+      var el = elm
+      var myVal = sVal[el].name
+      allAppUsers.push(myVal)
+      var aTag = $('<a>').text(myVal)
+      var aTagWithClass = aTag.addClass('list-group-item')
+      var aTagClassStyle = aTagWithClass.attr('style', 'text-align: center')
+      var aTagClassStyleHref = aTagClassStyle.attr('href', 'index.html')
+      var a = aTagClassStyleHref.attr('data-user', myVal)
+      // debugger
+      if (sVal[el].userrole == 'Dispatcher') {
+        $('#dispatcherList').append(aTagClassStyleHref)
+      } else {
+        $('#driverList').append(aTagClassStyleHref)
+      }
+    }
+
+    // Handle the errors
+  },
+  function(errorObject) {
+    console.log('Errors handled: ' + errorObject.code)
+  }
+)
+
+// function getActiverUser() {
+//   var retVal = ''
+//   database.ref('activeUsr').on(
+//     'value',
+//     function(snapshot) {
+//       // storing the snapshot.val() in a variable for convenience
+//       var snpVal = snapshot.val()
+//       retVal = snpVal.name
+//       $('#receiveUserID').text(retVal)
+//       // debugger
+
+//       // alert()
+
+//       // Handle the errors
+//     },
+//     function(errorObject) {
+//       console.log('Errors handled: ' + errorObject.code)
+//     }
+//   )
+//   return retVal
+// }
+// getActiverUser()
+
+// $('#receiveUserID').text(curUser)
+// debugger

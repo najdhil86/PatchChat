@@ -32,24 +32,13 @@
       <div class="col-4 border">
         <div class="container">
           <div class="settings-tray">
-            <span class="settings-tray--left float-left">
-              <i class="material-icons">arrow_back_ios</i>
+            <span href="User.html" class="settings-tray--left float-left">
+              <a href="User.html">Users</a>
             </span>
             <img class="profile-image" src="assets/images/man-1.svg" alt="" />
-            <h4 id="sendUserID">Dispatcher</h4>
+            <h4 id="sendUserID">Driver 1</h4>
           </div>
-          <div class="driver-drawer">
-            <img class="profile-image" src="assets/images/map.svg" alt="" />
-            <div class="trip-text">
-              <h5 class="h5-trip-text">Trip 1</h5>
-            </div>
-          </div>
-          <div class="driver-drawer">
-            <img class="profile-image" src="assets/images/map.svg" alt="" />
-            <div class="trip-text">
-              <h5 class="h5-trip-text">Trip 2</h5>
-            </div>
-          </div>
+
           <form>
             <div class="form-group" id="locationField">
               <label for="autocomplete">Address</label>
@@ -68,7 +57,9 @@
               <label for="sealNumber">Seal Number</label>
               <input type="text" class="form-control" id="sealNumber" />
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button id="sendFormInfo" type="submit" class="btn btn-primary">
+              Submit
+            </button>
           </form>
         </div>
       </div>
@@ -76,7 +67,7 @@
         <div class="friend-drawer">
           <img class="profile-image" src="assets/images/man-2.svg" alt="" />
           <div class="main-trip-text">
-            <h6 id="receiveUserID">Driver 1</h6>
+            <h6 id="receiveUserID">Dispatcher</h6>
           </div>
         </div>
       </div>
@@ -93,10 +84,8 @@
     </div>
 
     <!-- firebase -->
-
     <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
-
     <!-- bootstrap -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -120,6 +109,5 @@
       defer
     ></script>
     <script src="assets/javascript/app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
 </html>
