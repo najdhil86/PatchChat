@@ -1,0 +1,148 @@
+/*
+#######################################################################################################
+#######################################################################################################
+#######################################################################################################
+New file here. 
+#######################################################################################################
+#######################################################################################################
+#######################################################################################################
+*/
+body {
+  font: normal 400 16px Arial, Helvetica, sans-serif;
+  background-color: #2d3940;
+}
+/* .container {
+  margin: 60px auto;
+  background: #fff;
+  padding: 0;
+  border-radius: 7px;
+} */
+label,
+p,
+div {
+  color: white;
+}
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.settings-tray {
+  background-color: #8aa6bf;
+  padding: 10px 15px;
+  border-radius: 7px;
+}
+
+i {
+  margin-top: 10px;
+  font-size: 25px;
+  color: #2d3940;
+}
+
+i:hover {
+  color: #0d0d0d;
+  cursor: pointer;
+}
+
+.driver-drawer {
+  padding: 10px 15px;
+  display: flex;
+  vertical-align: baseline;
+  background: #cee1f2;
+  transition: 0.3s ease;
+}
+
+.friend-drawer {
+  padding: 10px 15px;
+  display: flex;
+  vertical-align: baseline;
+  background: #cee1f2;
+  transition: 0.3s ease;
+}
+
+.trip-text {
+  margin-left: 25%;
+  width: 70%;
+}
+
+.h5-trip-text {
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.driver-drawer:hover {
+  background: #0d0d0d;
+  cursor: pointer;
+  color: #fff;
+}
+
+.driver-drawer hr {
+  margin: 1px auto;
+  width: 60%;
+}
+
+h6 {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.main-trip-text {
+  margin-left: 3%;
+}
+
+.chat-bubble-left {
+  padding: 10px 14px;
+  background: #eee;
+  color: rgb(63, 60, 60);
+  margin: 10px 30px;
+  border-radius: 9px;
+  position: relative;
+  animation: fadeIn 1s ease-in;
+  text-align: left;
+}
+.chat-bubble-right {
+  padding: 10px 14px;
+  background: #a1c6dd;
+  color: rgb(63, 60, 60);
+  margin: 10px 30px;
+  border-radius: 9px;
+  position: relative;
+  animation: fadeIn 1s ease-in;
+}
+
+.chat-box-tray {
+  background: #eee;
+  display: flex;
+  align-items: baseline;
+  padding: 10px 15px;
+  align-items: center;
+  margin-top: 19px;
+  bottom: 0;
+  overflow: auto;
+  vertical-align: middle;
+}
+
+.chat-box-tray input {
+  margin: 0 10px;
+  padding: 6px 2px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.chat-box-tray i {
+  color: grey;
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+#addressForm {
+  margin: 20px;
+  padding: 20px;
+  width: 80%;
+  max-height: 80%;
+}
+
+p {
+  text-align: right;
+}
