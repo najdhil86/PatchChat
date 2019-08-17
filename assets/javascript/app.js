@@ -258,11 +258,25 @@ database.ref('users').on(
       var optionTag = $('<option>').text(myVal)
       var oTag = optionTag.attr('value', myVal)
       // debugger
-      if (sVal[el].userrole == 'Dispatcher') {
-        $('#dropDownDispatcher').append(oTag)
-      } else {
-        $('#dropDownDriver').append(oTag)
-      }
+      // if (sVal[el].userrole == 'Dispatcher') {
+      // $('#dropDownDispatcher').append(oTag)
+      // } else {
+      $('#dropDownDriver').append(oTag)
+      // }
+    }
+
+    for (var elm in sVal) {
+      var el = elm
+      var myVal = sVal[el].name
+      allAppUsers.push(myVal)
+      var optionTag = $('<option>').text(myVal)
+      var oTag = optionTag.attr('value', myVal)
+      // debugger
+      // if (sVal[el].userrole == 'Dispatcher') {
+      $('#dropDownDispatcher').append(oTag)
+      // } else {
+      // $('#dropDownDriver').append(oTag)
+      // }
     }
 
     // Handle the errors
