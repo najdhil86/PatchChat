@@ -68,13 +68,8 @@ function geolocate() {
 $('#sendFormInfo').on('click', function() {
   var addVal = 'Address: ' + $('#autocomplete').val()
   // alert(addVal)
-<<<<<<< HEAD
-  if (addVal.length > 0) {
-    $('.message').append(
-=======
   if ($('#autocomplete').val().length > 0) {
     $('#Chatform').append(
->>>>>>> end_2_end_flow
       $('<p>')
         .text(addVal)
         .attr('class', 'chat-bubble-right')
@@ -85,13 +80,8 @@ $('#sendFormInfo').on('click', function() {
   }
   var bolVal = 'Bill of Lading: ' + $('#billOfLading').val()
   // alert(bolVal)
-<<<<<<< HEAD
-  if (bolVal.length > 0) {
-    $('.message').append(
-=======
   if ($('#billOfLading').val().length > 0) {
     $('#Chatform').append(
->>>>>>> end_2_end_flow
       $('<p>')
         .text(bolVal)
         .attr('class', 'chat-bubble-right')
@@ -102,13 +92,8 @@ $('#sendFormInfo').on('click', function() {
   }
   var sealVal = 'Seal Number: ' + $('#sealNumber').val()
   // alert(sealVal.len)
-<<<<<<< HEAD
-  if (sealVal.length > 0) {
-    $('.message').append(
-=======
   if ($('#sealNumber').val().length > 0) {
     $('#Chatform').append(
->>>>>>> end_2_end_flow
       $('<p>')
         .text(sealVal)
         .attr('class', 'chat-bubble-right')
@@ -174,20 +159,6 @@ database.ref('msg').on(
     console.log('Errors handled: ' + errorObject.code)
   }
 )
-<<<<<<< HEAD
-var appUserRole
-var appUserName
-var appUserPass
-$('.udriver').on('click', function() {
-  appUserRole = $('.udriver').text()
-})
-$('.udispatcher').on('click', function() {
-  appUserRole = $('.udispatcher').text()
-})
-$('.signupbtn').on('click', function() {
-  appUserName = $('.nkey').val()
-  appUserPass = $('.pkey').val()
-=======
 
 var appUserRole
 var appUserName
@@ -210,7 +181,6 @@ $('.signupbtn').on('click', function() {
     appUserPass = $('#dPwd').val()
   }
   alert(appUserName)
->>>>>>> end_2_end_flow
   alert(appUserPass)
   database.ref('users').push({
     name: appUserName,
@@ -218,24 +188,6 @@ $('.signupbtn').on('click', function() {
     userrole: appUserRole,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
   })
-<<<<<<< HEAD
-})
-// // Get the dispatcher screen
-// var dispatcher = document.getElementById('id01')
-// // When the user clicks anywhere outside of the dispatcher screen, close it
-// window.onclick = function(event) {
-//   if (event.target == dispatcher) {
-//     dispatcher.style.display = 'none'
-//   }
-// }
-// var driver = document.getElementById('id02')
-// // When the user clicks anywhere outside of the driver screen, close it
-// window.onclick = function(event) {
-//   if (event.target == driver) {
-//     driver.style.display = 'none'
-//   }
-// }
-=======
   // event.preventDefault()
 })
 
@@ -361,4 +313,3 @@ $('#dropDownDispatcher').change(function() {
 
 // $('#receiveUserID').text(curUser)
 // debugger
->>>>>>> end_2_end_flow
