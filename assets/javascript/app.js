@@ -125,6 +125,7 @@ $('#send').on('click', function() {
   $('#chatMsg').val('')
   appUserID = $('#sendUserID').text()
   writeToDB(appUserID, msgVal)
+  event.preventDefault()
 })
 
 // Your web app's Firebase configuration
