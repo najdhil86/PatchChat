@@ -68,7 +68,7 @@ $('button').on('click', function() {
   var addVal = 'Address: ' + $('#autocomplete').val()
   // alert(addVal)
   if (addVal.length > 0) {
-    $('#Chatform').append(
+    $('.message').append(
       $('<p>')
         .text(addVal)
         .attr('class', 'chat-bubble-right')
@@ -80,7 +80,7 @@ $('button').on('click', function() {
   var bolVal = 'Bill of Lading: ' + $('#billOfLading').val()
   // alert(bolVal)
   if (bolVal.length > 0) {
-    $('#Chatform').append(
+    $('.message').append(
       $('<p>')
         .text(bolVal)
         .attr('class', 'chat-bubble-right')
@@ -92,7 +92,7 @@ $('button').on('click', function() {
   var sealVal = 'Seal Number: ' + $('#sealNumber').val()
   // alert(sealVal.len)
   if (sealVal.length > 0) {
-    $('#Chatform').append(
+    $('.message').append(
       $('<p>')
         .text(sealVal)
         .attr('class', 'chat-bubble-right')
@@ -105,7 +105,7 @@ $('button').on('click', function() {
 })
 $('#send').on('click', function() {
   var msgVal = $('#chatMsg').val()
-  $('#Chatform').append(
+  $('.message').append(
     $('<p>')
       .text(msgVal)
       .attr('class', 'chat-bubble-right')
@@ -145,7 +145,7 @@ database.ref('msg').on(
     // debugger
     console.log(sv)
     if (sv.name == $('#receiveUserID').text()) {
-      $('#Chatform').append(
+      $('.message').append(
         $('<p>')
           .text(sv.comment)
           .attr('class', 'chat-bubble-left')
